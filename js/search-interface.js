@@ -10,7 +10,8 @@ $(document).ready(function() {
     currentGithubSearch.getRepos(account);
     console.log(account);
     //display
-    $('#showAccount').text(account);
+
+    $('#login').text(account);
     $('userInput').val("");
     });
   });

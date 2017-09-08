@@ -6,6 +6,12 @@ var displayName = function(name) {
     $('#showAccount').append("<p>Username:" + name + "</p>");
   }
 };
+var displayRepo = function(repo) {
+  $('#showAccount').append(repo);
+};
+var description = function(descr) {
+  $('#showAccount').append(descr);
+};
 
 $(document).ready(function() {
   var currentGithubSearch = new GithubSearch();
@@ -16,7 +22,7 @@ $(document).ready(function() {
     $('#showAccount').val("");
     var account = $('#userInput').val();
 
-    currentGithubSearch.getRepos(account, displayName);
+    currentGithubSearch.getRepos(account, displayName, displayRepo, description);
 
     console.log(account);
     //display

@@ -9,7 +9,7 @@ function GithubSearch() {
 
 }
 
-GithubSearch.prototype.getRepos = function(userName, displayName) {
+GithubSearch.prototype.getRepos = function(userName, displayName, displayRepo, description) {
   $.get('https://api.github.com/users/' + userName + '?access_token=' + apiKey).then(function(response){
      displayName(response.name);
    }).fail(function(error){
@@ -18,8 +18,8 @@ GithubSearch.prototype.getRepos = function(userName, displayName) {
 // user name
    $.get('https://api.github.com/users/' + userName + '/repos?access_token=' + apiKey).then(function(response){
      for (var index = 0; index <= response.length; index++ ) {
-       console.log(response[index].name);
-       console.log(response[index].description);
+       displayRepo(response[index].name);
+       description(response[index].description);
      }
    });
 };
@@ -36,6 +36,12 @@ var displayName = function(name) {
     $('#showAccount').append("<p>Username:" + name + "</p>");
   }
 };
+var displayRepo = function(repo) {
+  $('#showAccount').append(repo);
+};
+var description = function(descr) {
+  $('#showAccount').append(descr);
+};
 
 $(document).ready(function() {
   var currentGithubSearch = new GithubSearch();
@@ -46,7 +52,7 @@ $(document).ready(function() {
     $('#showAccount').val("");
     var account = $('#userInput').val();
 
-    currentGithubSearch.getRepos(account, displayName);
+    currentGithubSearch.getRepos(account, displayName, displayRepo, description);
 
     console.log(account);
     //display

@@ -1,4 +1,4 @@
-var apiKey = "90463ddf1da3789c8fecdbda8779c699d284624c";
+var apiKey = require('./../.env').apiKey;
 
 
 function GithubSearch() {
@@ -14,10 +14,3 @@ GithubSearch.prototype.getRepos = function() {
 };
 
 exports.searchModule = GithubSearch;
-
-
-// function GithubSearch() {
-//
-// }
-
-//

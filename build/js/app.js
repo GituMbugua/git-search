@@ -9,18 +9,33 @@ function GithubSearch() {
 
 }
 
-GithubSearch.prototype.getRepos = function(userName) {
+GithubSearch.prototype.getRepos = function(userName, displayName) {
   $.get('https://api.github.com/users/' + userName + '?access_token=' + apiKey).then(function(response){
-     console.log(response);
+     displayName(response.name);
    }).fail(function(error){
      console.log(error.responseJSON.message);
    });
+// user name
+   $.get('https://api.github.com/users/' + userName + '/repos?access_token=' + apiKey).then(function(response){
+     for (var index = 0; index <= response.length; index++ ) {
+       console.log(response[index].name);
+       console.log(response[index].description);
+     }
+   });
 };
+
 
 exports.searchModule = GithubSearch;
 
 },{"./../.env":1}],3:[function(require,module,exports){
 var GithubSearch = require('./../js/search.js').searchModule;
+var displayName = function(name) {
+    if (name === null) {
+      $('#showAccount').append("This account does not have a username.");
+    } else {
+    $('#showAccount').append("<p>Username:" + name + "</p>");
+  }
+};
 
 $(document).ready(function() {
   var currentGithubSearch = new GithubSearch();
@@ -28,12 +43,14 @@ $(document).ready(function() {
   $('#form').submit(function(event) {
     event.preventDefault();
 
+    $('#showAccount').val("");
     var account = $('#userInput').val();
-    currentGithubSearch.getRepos(account);
+
+    currentGithubSearch.getRepos(account, displayName);
+
     console.log(account);
     //display
 
-    $('#login').text(account);
     $('userInput').val("");
     });
   });

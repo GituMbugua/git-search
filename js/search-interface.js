@@ -7,7 +7,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var account = $('#userInput').val();
-    currentGithubSearch.getRepos();
+    currentGithubSearch.getRepos(account);
     console.log(account);
     //display
     $('#showAccount').text(account);

@@ -9,8 +9,8 @@ function GithubSearch() {
 
 }
 
-GithubSearch.prototype.getRepos = function() {
-  $.get('https://api.github.com/users/GituMbugua?access_token=' + apiKey).then(function(response){
+GithubSearch.prototype.getRepos = function(account) {
+  $.get('https://api.github.com/users/' + account + '?access_token=' + apiKey).then(function(response){
      console.log(response);
    }).fail(function(error){
      console.log(error.responseJSON.message);
@@ -29,7 +29,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var account = $('#userInput').val();
-    currentGithubSearch.getRepos();
+    currentGithubSearch.getRepos(account);
     console.log(account);
     //display
     $('#showAccount').text(account);

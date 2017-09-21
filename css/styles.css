@@ -1,21 +1,40 @@
-body {
-  margin: 0%;
-  background-color: #EDF9F7;
-}
-
-header {
-  font-size: 35px;
+#cover {
+  animation: pulse 12s infinite;
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
   color: white;
-  background-color: black;
-  padding: 2%;
-  text-align: center;
-  margin: 0%;
 }
 
-.row h3 {
+@keyframes pulse {
+  0% {
+    background-color: #010118;
+  }
+  50% {
+    background-color: #000000;
+  }
+  100% {
+    background-color: #010118;
+  }
+}
+
+#image {
+  height: 10%;
+  width: 10%;
+}
+
+#container {
+  font-family: philosopher, sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 10%;
+}
+
+h1 {
   font-size: 300%;
 }
 
 p {
-  font-size: 120%;
+  font-size: 125%;
 }

@@ -31,9 +31,9 @@ exports.searchModule = GithubSearch;
 var GithubSearch = require('./../js/search.js').searchModule;
 var displayName = function(name) {
     if (name === null) {
-      $('#login').append("This account does not have a username.");
+      $('#showAccount').append("<h3>This account does not have a username.</h3>");
     } else {
-    $('#login').append("<h3>Username: </h3><h4>" + name + "</h4>");
+    $('#showAccount').append("<h3>Username: </h3><h4>" + name + "</h4>");
   }
 };
 var displayRepo = function(repo) {

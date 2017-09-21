@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="build/css/vendor.css">
     <script src="build/js/vendor.min.js"></script>
-    <link src="build/css/vendor.css"></link>
+    <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Git-Account Search</title>
   </head>
@@ -17,17 +18,23 @@
         <p>On this page, you can search any Github account username and find the one you are looking for!
         Search below to find an account.</p>
       </div>
-      <div class="col-md-8">
-        <div class="input">
-          <form id="form" class="form-group">
-            <input id="userInput"class"form-control" type="text" placeholder="Enter a Github username">
-            <button id="search" type="submit" name="button">Search</button>
-          </form>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="input">
+            <form id="form" class="form-group">
+              <input id="userInput" class"form-control" type="text" placeholder="Enter a Github username">
+              <button id="search" class="btn btn-success" type="submit" name="button">Search</button>
+            </form>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div id="showAccount">
-          <h5 id="login"></h5>
+      <div id="show" class="row">
+        <div id="showAccount" class="col-md-6">
+            <h5 id="login"></h5>
+           
+        </div>
+        <div class="col-md-6">
+         
         </div>
       </div>
     </div>

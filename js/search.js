@@ -16,7 +16,7 @@ GithubSearch.prototype.getRepos = function(userName, displayName, displayRepo, d
      for (var index = 0; index <= response.length; index++ ) {
        displayRepo(response[index].name);
        description(response[index].description);
-     }
+      }
    });
 };
 

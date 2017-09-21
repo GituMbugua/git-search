@@ -1,16 +1,16 @@
 var GithubSearch = require('./../js/search.js').searchModule;
 var displayName = function(name) {
     if (name === null) {
-      $('#showAccount').append("This account does not have a username.");
+      $('#login').append("This account does not have a username.");
     } else {
-    $('#showAccount').append("<p>Username:" + name + "</p>");
+    $('#login').append("<h3>Username: </h3><h4>" + name + "</h4>");
   }
 };
 var displayRepo = function(repo) {
-  $('#showAccount').append(repo);
+  $('#showAccount').append('<h4>' + repo + '</h4>');
 };
 var description = function(descr) {
-  $('#showAccount').append(descr);
+  $('#showAccount').append('<p>' + descr + '</p>');
 };
 
 $(document).ready(function() {

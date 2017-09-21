@@ -1,0 +1,21 @@
+body {
+  margin: 0%;
+  background-color: #EDF9F7;
+}
+
+header {
+  font-size: 35px;
+  color: white;
+  background-color: black;
+  padding: 2%;
+  text-align: center;
+  margin: 0%;
+}
+
+.row h3 {
+  font-size: 300%;
+}
+
+p {
+  font-size: 120%;
+}

@@ -26,17 +26,13 @@ You will need the following things properly installed on your computer to use th
 
 ### Running / Development
 
-```
 * `gulp serve`
 * Visit the app at the link provided in your terminal.
-```
 
 ### Building
 
-```
 * `gulp build` (development)
 * `gulp build --production` (production)
-```
 
 ### Bugs
 This app has no known bugs.

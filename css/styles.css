@@ -32,7 +32,6 @@
 }
 
 #userInput {
-  /* background: rgba(128, 128, 128, 0.6); */
   font-size: 20px;
   border: none;
   border-radius: 5px;
@@ -57,20 +56,30 @@ h1 {
   font-size: 300%;
 }
 
-p {
-  font-size: 125%;
-}
-
-.modal-dialog{
+.modal-dialog {
   overflow-y: initial;
-  color: black;
   width: 70%;
   z-index: -3;
+  color: black;
+  font-family: 'Mate', cursive;
+  
 }
-.modal-body{
+.modal-body {
   height: 700px;
   overflow-y: auto;
+  
+  }
+
+#login h3 {
+  font-size: 30px;
 }
+#showAccount {
+  font-size: 24px;
+}
+#showAccount h4 {
+  font-size: 26px;
+}
+
 .modal-backdrop {
   z-index: -2;
 }

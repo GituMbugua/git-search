@@ -7,28 +7,39 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded|Kalam|Philosopher" rel="stylesheet">
     <script type="text/javascript" src="build/js/app.js"></script>
-    <title>Git-Account Search</title>
+    <title>Github-Account Search</title>
   </head>
   <body>
     <div id="cover" class="container-fluid">
       <div id="container">
-        <img id="image" src="./img/icon.png" alt="Icon"><h1>Git-Account Search</h1>
+        <img id="image" src="./img/icon.png" alt="Icon"><h1>Github-Account Search</h1>
         <p>On this page, you can search any Github account username and find the one you are looking for!
         Search below to find an account.</p>
         <div class="form-group">
           <form id="form" class="form-horizontal">
             <input id="userInput" type="text" class"form-control input-sm" placeholder="Enter a Github username">
-            <button id="search" class="btn btn-success" type="submit" name="button">Search</button>
+            <button id="search" class="btn btn-success" type="submit" name="button" data-toggle="modal" data-target="#myModal">Search</button>
           </form>
         </div>
       </div>
       <div class="row">
-        <div id="showAccount" class="col-md-6">
-            <h5 id="login"></h5>
-           
-        </div>
-        <div class="col-md-6">
-         
+        <div id="myModal" class="modal fade">
+          <div class="modal-dialog modal-lg">
+        
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span id="login"></span>
+              </div>
+              <div id="showAccount" class="modal-body">
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+        
+          </div>
         </div>
       </div>
     </div>
